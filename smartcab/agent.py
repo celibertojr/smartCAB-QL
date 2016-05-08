@@ -124,7 +124,7 @@ def run():
 
     # Now simulate it
     sim = Simulator(e, update_delay=0.000000001)  # reduce update_delay to speed up simulation
-    sim.run(n_trials=10)  # press Esc or close pygame window to quit
+    sim.run(n_trials=100)  # press Esc or close pygame window to quit
 
 
 

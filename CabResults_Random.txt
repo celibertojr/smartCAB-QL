@@ -1,0 +1,101 @@
+Primary agent could not reach destination within deadline! Fail :1
+Primary agent could not reach destination within deadline! Fail :2
+Primary agent could not reach destination within deadline! Fail :3
+Primary agent has reached destination! : 4/35 with a cumulative reward of 14.0
+Primary agent could not reach destination within deadline! Fail :4
+Primary agent could not reach destination within deadline! Fail :5
+Primary agent could not reach destination within deadline! Fail :6
+Primary agent could not reach destination within deadline! Fail :7
+Primary agent could not reach destination within deadline! Fail :8
+Primary agent could not reach destination within deadline! Fail :9
+Primary agent has reached destination! : 10/30 with a cumulative reward of 11.0
+Primary agent could not reach destination within deadline! Fail :10
+Primary agent has reached destination! : 1/40 with a cumulative reward of 17.0
+Primary agent could not reach destination within deadline! Fail :11
+Primary agent could not reach destination within deadline! Fail :12
+Primary agent could not reach destination within deadline! Fail :13
+Primary agent could not reach destination within deadline! Fail :14
+Primary agent could not reach destination within deadline! Fail :15
+Primary agent could not reach destination within deadline! Fail :16
+Primary agent could not reach destination within deadline! Fail :17
+Primary agent could not reach destination within deadline! Fail :18
+Primary agent could not reach destination within deadline! Fail :19
+Primary agent could not reach destination within deadline! Fail :20
+Primary agent could not reach destination within deadline! Fail :21
+Primary agent could not reach destination within deadline! Fail :22
+Primary agent could not reach destination within deadline! Fail :23
+Primary agent could not reach destination within deadline! Fail :24
+Primary agent could not reach destination within deadline! Fail :25
+Primary agent could not reach destination within deadline! Fail :26
+Primary agent could not reach destination within deadline! Fail :27
+Primary agent could not reach destination within deadline! Fail :28
+Primary agent could not reach destination within deadline! Fail :29
+Primary agent could not reach destination within deadline! Fail :30
+Primary agent could not reach destination within deadline! Fail :31
+Primary agent could not reach destination within deadline! Fail :32
+Primary agent could not reach destination within deadline! Fail :33
+Primary agent could not reach destination within deadline! Fail :34
+Primary agent could not reach destination within deadline! Fail :35
+Primary agent could not reach destination within deadline! Fail :36
+Primary agent could not reach destination within deadline! Fail :37
+Primary agent could not reach destination within deadline! Fail :38
+Primary agent could not reach destination within deadline! Fail :39
+Primary agent has reached destination! : 16/25 with a cumulative reward of 2.0
+Primary agent could not reach destination within deadline! Fail :40
+Primary agent has reached destination! : 13/30 with a cumulative reward of 7.5
+Primary agent could not reach destination within deadline! Fail :41
+Primary agent could not reach destination within deadline! Fail :42
+Primary agent could not reach destination within deadline! Fail :43
+Primary agent could not reach destination within deadline! Fail :44
+Primary agent could not reach destination within deadline! Fail :45
+Primary agent could not reach destination within deadline! Fail :46
+Primary agent could not reach destination within deadline! Fail :47
+Primary agent could not reach destination within deadline! Fail :48
+Primary agent has reached destination! : 10/20 with a cumulative reward of 9.5
+Primary agent could not reach destination within deadline! Fail :49
+Primary agent could not reach destination within deadline! Fail :50
+Primary agent could not reach destination within deadline! Fail :51
+Primary agent could not reach destination within deadline! Fail :52
+Primary agent could not reach destination within deadline! Fail :53
+Primary agent could not reach destination within deadline! Fail :54
+Primary agent has reached destination! : 14/25 with a cumulative reward of 8.5
+Primary agent could not reach destination within deadline! Fail :55
+Primary agent could not reach destination within deadline! Fail :56
+Primary agent could not reach destination within deadline! Fail :57
+Primary agent could not reach destination within deadline! Fail :58
+Primary agent has reached destination! : 1/25 with a cumulative reward of 19.5
+Primary agent could not reach destination within deadline! Fail :59
+Primary agent could not reach destination within deadline! Fail :60
+Primary agent could not reach destination within deadline! Fail :61
+Primary agent could not reach destination within deadline! Fail :62
+Primary agent could not reach destination within deadline! Fail :63
+Primary agent has reached destination! : 21/30 with a cumulative reward of 5.0
+Primary agent could not reach destination within deadline! Fail :64
+Primary agent could not reach destination within deadline! Fail :65
+Primary agent could not reach destination within deadline! Fail :66
+Primary agent could not reach destination within deadline! Fail :67
+Primary agent could not reach destination within deadline! Fail :68
+Primary agent could not reach destination within deadline! Fail :69
+Primary agent could not reach destination within deadline! Fail :70
+Primary agent could not reach destination within deadline! Fail :71
+Primary agent could not reach destination within deadline! Fail :72
+Primary agent could not reach destination within deadline! Fail :73
+Primary agent has reached destination! : 35/45 with a cumulative reward of 3.5
+Primary agent has reached destination! : 13/25 with a cumulative reward of 14.0
+Primary agent could not reach destination within deadline! Fail :74
+Primary agent could not reach destination within deadline! Fail :75
+Primary agent could not reach destination within deadline! Fail :76
+Primary agent has reached destination! : 5/20 with a cumulative reward of 5.0
+Primary agent has reached destination! : 7/30 with a cumulative reward of 13.5
+Primary agent could not reach destination within deadline! Fail :77
+Primary agent could not reach destination within deadline! Fail :78
+Primary agent could not reach destination within deadline! Fail :79
+Primary agent could not reach destination within deadline! Fail :80
+Primary agent has reached destination! : 7/35 with a cumulative reward of 13.0
+Primary agent could not reach destination within deadline! Fail :81
+Primary agent could not reach destination within deadline! Fail :82
+Primary agent could not reach destination within deadline! Fail :83
+Primary agent has reached destination! : 0/30 with a cumulative reward of 16.5
+Primary agent could not reach destination within deadline! Fail :84
+Primary agent has reached destination! : 6/20 with a cumulative reward of 8.5
+Primary agent could not reach destination within deadline! Fail :85
