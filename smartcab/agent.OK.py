@@ -16,58 +16,39 @@ class LearningAgent(Agent):
         self.color = 'blue'  # override color
         self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
         # TODO: Initialize any additional variables here
-        self.alpha = 0.2 #alpha value
-        self.gamma = 0.9 #gama value
+        self.alpha = 0.2
+        self.gamma = 0.9
         self.state = None
         self.action = None
         self.OLDstate = None
         self.NEWstate = None
         self.agent_reward = None
         self.storageRewards = 0  # just for testing
-        self.countFail = 0 #just for test the number of Fails
+        self.countFail = 0
         self.QL = dict()  # storage the state and action here. (https://docs.python.org/2/library/stdtypes.html)
-        self.exploration_rate = 0.1  # percentage of randomness (10%)
-        self.Learning = True # choice Learning (default QL) ou random
-        self.Sarsa = True # choice QL or S.A.R.S.A
+        self.exploration_rate = 0.1  # percentage of randomness
+        self.Learning = True # choice QL ou random
 
 
     def reset(self, destination=None):
-        """
-        initializes the environment variables
-        input: env, initializes the environment variable for sensing
-
-        Responsible for initializing the color of the car, and the route.
-        for the learning start the reward with 0 and variables station and action
-        empty.
-        """
         self.planner.route_to(destination)
         # TODO: Prepare for a new trip; reset any variables here, if required
         self.state = None
         self.action = None
         self.storageRewards = 0
 
-
-
-    def qlvalue(self, state, action):  # return the Q value give state and action
-        """
-        in=> state and action
-        out<= Q value for the state and action
-        returns 0 if the value is not present in the dictionary.
-        """
+    def qlvalue(self, state, action):  # return the Q value
         return self.QL.get((state, action), 20.0)
 
-    def mapActions(self, state):  # return info about legal action from state
+    def mapActions(self, state):  # return action from state
         return ['forward', 'left', 'right', None]
 
-    def mapState(self, state): #return  info about legal actual state
+    def mapState(self, state):
         State = namedtuple("State", ["light", "next_waypoint"])
         return State(light=state['light'],
                      next_waypoint=self.planner.next_waypoint())
 
     def best_qvalue(self, state):
-        """
-            Returns the value of best action from the state
-        """
         Actions = self.mapActions(state)
         qv = - 999999999
         for action in Actions:
@@ -75,23 +56,24 @@ class LearningAgent(Agent):
                 qv = self.qlvalue(state, action)
         return qv
 
+    def QLupdate(self, reward, action, state, nextState):
+        self.QL[(state, action)] = self.qlvalue(state, action) + self.alpha * (
+            reward + (self.gamma * self.best_qvalue(nextState)) - self.qlvalue(state, action))
+
+    def choiceRandomAction(self, state):
+        Actions = self.mapActions(state)
+        bestAction = random.choice(Actions)
+        return bestAction
+
+
     def choiceAction(self, state):
-        """
-        Choice the best action to take.
-
-        Here is the heart of the learning. From all the action that
-        the agent is allowed to do, the algorithm return the best to
-        do. But with 10% of randomness to avoid to be stuck in a local minimum
-
-        """
-
         Actions = self.mapActions(state)
         bestAction = None
         QV = - 999999999
 
         rvalue = random.random()
         if rvalue < self.exploration_rate:  # do a random action
-            bestAction = random.choice(Actions)
+            bestAction= random.choice(Actions)
         else:
             for action in Actions:
                 if self.qlvalue(state, action) > QV:
@@ -100,39 +82,7 @@ class LearningAgent(Agent):
 
         return bestAction
 
-    def QLupdate(self, reward, action, state, nextState):
-        """
-            Update the QLearning algorithm.
-            Q(s,a)=Q(s,a)+alpha*(reward + gama(maxQ(s',a') - Q(s,a))
-
-            """
-        self.QL[(state, action)] = self.qlvalue(state, action) + self.alpha * (
-            reward + (self.gamma * self.best_qvalue(nextState)) - self.qlvalue(state, action))
-
-
-    def Sarsaupdate(self, reward, action, state, nextState):
-        """
-            Update the SARSA algorithm.
-            Q(s,a)=Q(s,a)+alpha*(reward + gama((s',a') - Q(s,a))
-
-            """
-        action2= self.choiceAction(nextState)
-        self.QL[(state, action)] = self.qlvalue(state, action) + self.alpha * (
-            reward + (self.gamma * self.qlvalue(nextState, action2)) - self.qlvalue(state, action))
-
-    def choiceRandomAction(self, state):
-        #choice random action
-
-        Actions = self.mapActions(state)
-        bestAction = random.choice(Actions)
-        return bestAction
-
-
-
     def update(self, t):
-        """
-            Main update method that is responsible for updating the agent action.
-            """
         # Gather inputs
         self.next_waypoint = self.planner.next_waypoint()  # from route planner, also displayed by simulator
         inputs = self.env.sense(self)  # information
@@ -142,9 +92,9 @@ class LearningAgent(Agent):
         self.state = self.mapState(inputs)  # map the states and return
 
         if self.Learning:
-            action = self.choiceAction(self.state) #choice the action from the Q-table
+            action = self.choiceAction(self.state) #choice the action but the Q-Learning
         else:
-            action = self.choiceRandomAction(self.state) # choice an random action
+            action = self.choiceRandomAction(self.state)
 
         # Execute action and get reward
         reward = self.env.act(self, action)
@@ -154,17 +104,14 @@ class LearningAgent(Agent):
         #get the new state
         self.NEWstate = self.mapState(inputs)  # map the states and return
 
-        #Update the QL or SARSA with the reward of action and states
-        if self.Sarsa:
-            self.Sarsaupdate(reward, action, self.state, self.NEWstate)
-        else:
-            self.QLupdate(reward, action, self.state, self.NEWstate)
+        #Update the QL with the reward of action and states
+        self.QLupdate(reward, action, self.state, self.NEWstate)
 
         print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs,
                                                                                                     action,
                                                                                                     reward)  # [debug]
 
-        self.storageRewards += reward  # just to pickup some info of reward
+        self.storageRewards += reward  # just to pickup some info.
 
 
 def run():
