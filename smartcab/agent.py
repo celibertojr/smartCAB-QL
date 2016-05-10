@@ -3,7 +3,7 @@ from environment import Agent, Environment
 from planner import RoutePlanner
 from simulator import Simulator
 from collections import namedtuple
-
+import time
 
 class LearningAgent(Agent):
     """An agent that learns to drive in the smartcab world."""
@@ -54,7 +54,7 @@ class LearningAgent(Agent):
         out<= Q value for the state and action
         returns 0 if the value is not present in the dictionary.
         """
-        return self.QL.get((state, action), 20.0)
+        return self.QL.get((state, action), 0)
 
     def mapActions(self, state):  # return info about legal action from state
         return ['forward', 'left', 'right', None]
@@ -169,17 +169,20 @@ class LearningAgent(Agent):
 
 def run():
     """Run the agent for a finite number of trials."""
-
+    start = time.time()
     # Set up environment and agent
     e = Environment()  # create environment (also adds some dummy traffic)
     a = e.create_agent(LearningAgent)  # create agent
     e.set_primary_agent(a, enforce_deadline=True)  # set agent to track
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.000000001)  # reduce update_delay to speed up simulation
+    sim = Simulator(e, update_delay=1)  # reduce update_delay to speed up simulation
     sim.run(n_trials=100)  # press Esc or close pygame window to quit
-
-
+    end = time.time()
+    print(end - start)
 
 if __name__ == '__main__':
     run()
+
+
+
