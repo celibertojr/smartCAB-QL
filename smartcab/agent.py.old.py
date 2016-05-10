@@ -29,11 +29,6 @@ class LearningAgent(Agent):
         self.exploration_rate = 0.1  # percentage of randomness (10%)
         self.Learning = True # choice Learning (default QL) ou random
         self.Sarsa = True # choice QL or S.A.R.S.A
-        self.addStorage=0 #debug
-        self.Allsteps =0 #debug
-        self.addsteps = 0#debug
-        self.addAllsteps = 0 #debug
-
 
 
     def reset(self, destination=None):
@@ -171,16 +166,6 @@ class LearningAgent(Agent):
 
         self.storageRewards += reward  # just to pickup some info of reward
 
-        self.addStorage += reward
-        self.addsteps+=(self.Allsteps-deadline)
-        self.addAllsteps +=self.Allsteps
-
-        print self.addStorage
-        print self.addAllsteps
-        print self.addsteps
-
-
-
 
 def run():
     """Run the agent for a finite number of trials."""
@@ -191,8 +176,8 @@ def run():
     e.set_primary_agent(a, enforce_deadline=True)  # set agent to track
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.000001)  # reduce update_delay to speed up simulation
-    sim.run(n_trials=10)  # press Esc or close pygame window to quit
+    sim = Simulator(e, update_delay=1)  # reduce update_delay to speed up simulation
+    sim.run(n_trials=100)  # press Esc or close pygame window to quit
     end = time.time()
     print(end - start)
 
