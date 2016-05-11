@@ -91,6 +91,7 @@ class Environment(object):
         start_heading = random.choice(self.valid_headings)
         deadline = self.compute_dist(start, destination) * 5
         self.deadline_start = deadline
+        self.primary_agent.Allsteps=self.deadline_start
         print "Environment.reset(): Trial set up with start = {}, destination = {}, deadline = {}".format(start, destination, deadline)
 
         # Initialize agent(s)

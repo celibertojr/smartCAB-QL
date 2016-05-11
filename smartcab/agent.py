@@ -16,7 +16,7 @@ class LearningAgent(Agent):
         self.color = 'blue'  # override color
         self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
         # TODO: Initialize any additional variables here
-        self.alpha = 0.2 #alpha value
+        self.alpha = 0.2#alpha value
         self.gamma = 0.9 #gama value
         self.state = None
         self.action = None
@@ -33,6 +33,9 @@ class LearningAgent(Agent):
         self.Allsteps =0 #debug
         self.addsteps = 0#debug
         self.addAllsteps = 0 #debug
+        self.penalties = [] #debug
+        self.penalty = 0 #debug
+        self.Allpenalties=0 #debug
 
 
 
@@ -50,6 +53,11 @@ class LearningAgent(Agent):
         self.state = None
         self.action = None
         self.storageRewards = 0
+        self.penalties.append(self.penalty)
+        self.Allpenalties += self.penalty
+        self.penalty = 0
+
+
 
 
 
@@ -139,9 +147,12 @@ class LearningAgent(Agent):
             Main update method that is responsible for updating the agent action.
             """
         # Gather inputs
+
+
         self.next_waypoint = self.planner.next_waypoint()  # from route planner, also displayed by simulator
         inputs = self.env.sense(self)  # information
         deadline = self.env.get_deadline(self)
+
 
         # TODO: Update state
         self.state = self.mapState(inputs)  # map the states and return
@@ -153,6 +164,11 @@ class LearningAgent(Agent):
 
         # Execute action and get reward
         reward = self.env.act(self, action)
+
+        # calculate penalties
+        if reward < 0:
+            self.penalty += 1
+
 
         # TODO: Learn policy based on state, action, reward
 
@@ -175,9 +191,15 @@ class LearningAgent(Agent):
         self.addsteps+=(self.Allsteps-deadline)
         self.addAllsteps +=self.Allsteps
 
-        print self.addStorage
-        print self.addAllsteps
-        print self.addsteps
+
+        print "Values: Storage = {}, AllSteps={}. SmartSteps = {}, Penalties = {}".format(self.addStorage, self.addAllsteps,
+                                                                                          self.addsteps,
+                                                                                          self.Allpenalties)  # [debug]
+        #print self.addStorage # [debug]
+        #print self.addAllsteps # [debug]
+        #print self.addsteps # [debug]
+        #print self.Allpenalties # [debug]
+
 
 
 
@@ -191,10 +213,11 @@ def run():
     e.set_primary_agent(a, enforce_deadline=True)  # set agent to track
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.000001)  # reduce update_delay to speed up simulation
-    sim.run(n_trials=10)  # press Esc or close pygame window to quit
+    sim = Simulator(e, update_delay=0.00001)  # reduce update_delay to speed up simulation
+    sim.run(n_trials=100)  # press Esc or close pygame window to quit
     end = time.time()
-    print(end - start)
+    print"Time (s) = {}".format((end - start))
+    print(a.penalties)
 
 if __name__ == '__main__':
     run()
