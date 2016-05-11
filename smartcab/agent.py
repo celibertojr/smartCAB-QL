@@ -29,13 +29,13 @@ class LearningAgent(Agent):
         self.exploration_rate = 0.1  # percentage of randomness (10%)
         self.Learning = True # choice Learning (default QL) ou random
         self.Sarsa = False # choice QL or S.A.R.S.A
-        self.addStorage=0 #debug
-        self.Allsteps =0 #debug
-        self.addsteps = 0#debug
-        self.addAllsteps = 0 #debug
-        self.penalties = [] #debug
-        self.penalty = 0 #debug
-        self.Allpenalties=0 #debug
+        #self.addStorage=0 #debug
+        #self.Allsteps =0 #debug
+        #self.addsteps = 0#debug
+        #self.addAllsteps = 0 #debug
+        #self.penalties = [] #debug
+        #self.penalty = 0 #debug
+        #self.Allpenalties=0 #debug
 
 
 
@@ -53,9 +53,9 @@ class LearningAgent(Agent):
         self.state = None
         self.action = None
         self.storageRewards = 0
-        self.penalties.append(self.penalty) #debug
-        self.Allpenalties += self.penalty  #debug
-        self.penalty = 0 #debug
+        #self.penalties.append(self.penalty) #debug
+        #self.Allpenalties += self.penalty  #debug
+        #self.penalty = 0 #debug
 
 
 
@@ -166,8 +166,8 @@ class LearningAgent(Agent):
         reward = self.env.act(self, action)
 
         # calculate penalties
-        if reward < 0:
-            self.penalty += 1
+        #if reward < 0:
+        #    self.penalty += 1
 
 
         # TODO: Learn policy based on state, action, reward
@@ -187,14 +187,14 @@ class LearningAgent(Agent):
 
         self.storageRewards += reward  # just to pickup some info of reward
 
-        self.addStorage += reward
-        self.addsteps+=(self.Allsteps-deadline)
-        self.addAllsteps +=self.Allsteps
+        #self.addStorage += reward
+        #self.addsteps+=(self.Allsteps-deadline)
+        #self.addAllsteps +=self.Allsteps
 
 
-        print "Values: Storage = {}, AllSteps={}. SmartSteps = {}, Penalties = {}".format(self.addStorage, self.addAllsteps,
-                                                                                          self.addsteps,
-                                                                                          self.Allpenalties)  # [debug]
+        #print "Values: Storage = {}, AllSteps={}. SmartSteps = {}, Penalties = {}".format(self.addStorage, self.addAllsteps,
+        #                                                                                  self.addsteps,
+        #                                                                                  self.Allpenalties)  # [debug]
 
 
 
