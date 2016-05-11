@@ -16,7 +16,7 @@ class LearningAgent(Agent):
         self.color = 'blue'  # override color
         self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
         # TODO: Initialize any additional variables here
-        self.alpha = 0.2#alpha value
+        self.alpha = 0#alpha value
         self.gamma = 0.9 #gama value
         self.state = None
         self.action = None
@@ -28,7 +28,7 @@ class LearningAgent(Agent):
         self.QL = dict()  # storage the state and action here. (https://docs.python.org/2/library/stdtypes.html)
         self.exploration_rate = 0.1  # percentage of randomness (10%)
         self.Learning = True # choice Learning (default QL) ou random
-        self.Sarsa = True # choice QL or S.A.R.S.A
+        self.Sarsa = False # choice QL or S.A.R.S.A
         self.addStorage=0 #debug
         self.Allsteps =0 #debug
         self.addsteps = 0#debug
@@ -53,9 +53,9 @@ class LearningAgent(Agent):
         self.state = None
         self.action = None
         self.storageRewards = 0
-        self.penalties.append(self.penalty)
-        self.Allpenalties += self.penalty
-        self.penalty = 0
+        self.penalties.append(self.penalty) #debug
+        self.Allpenalties += self.penalty  #debug
+        self.penalty = 0 #debug
 
 
 
@@ -65,8 +65,9 @@ class LearningAgent(Agent):
         """
         in=> state and action
         out<= Q value for the state and action
-        returns 0 if the value is not present in the dictionary.
+        returns "0" if the value is not present in the dictionary.
         """
+        #return self.QL.get((state, action), random.randint(0, 20)) # just for testing 0-20
         return self.QL.get((state, action), 20)
 
     def mapActions(self, state):  # return info about legal action from state
@@ -147,12 +148,11 @@ class LearningAgent(Agent):
             Main update method that is responsible for updating the agent action.
             """
         # Gather inputs
-
-
         self.next_waypoint = self.planner.next_waypoint()  # from route planner, also displayed by simulator
         inputs = self.env.sense(self)  # information
         deadline = self.env.get_deadline(self)
 
+        self.alpha = (1/(t+5)) + 0.75 # nem alpha !
 
         # TODO: Update state
         self.state = self.mapState(inputs)  # map the states and return
@@ -195,11 +195,6 @@ class LearningAgent(Agent):
         print "Values: Storage = {}, AllSteps={}. SmartSteps = {}, Penalties = {}".format(self.addStorage, self.addAllsteps,
                                                                                           self.addsteps,
                                                                                           self.Allpenalties)  # [debug]
-        #print self.addStorage # [debug]
-        #print self.addAllsteps # [debug]
-        #print self.addsteps # [debug]
-        #print self.Allpenalties # [debug]
-
 
 
 
@@ -218,6 +213,10 @@ def run():
     end = time.time()
     print"Time (s) = {}".format((end - start))
     print(a.penalties)
+
+    with open("penalties.txt", "a") as myfile:
+        for l1 in range(0, 100):
+            myfile.write(str(a.penalties[l1])+"\n")
 
 if __name__ == '__main__':
     run()

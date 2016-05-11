@@ -1,0 +1,100 @@
+Primary agent has reached destination! : 17/35 with a cumulative reward of 11.5
+Primary agent has reached destination! : 18/25 with a cumulative reward of 7
+Primary agent has reached destination! : 33/45 with a cumulative reward of 15.5
+Primary agent has reached destination! : 24/40 with a cumulative reward of 22.0
+Primary agent has reached destination! : 25/35 with a cumulative reward of 15.5
+Primary agent could not reach destination within deadline! Fail :1
+Primary agent could not reach destination within deadline! Fail :2
+Primary agent has reached destination! : 18/30 with a cumulative reward of 18.5
+Primary agent has reached destination! : 19/25 with a cumulative reward of 9.0
+Primary agent has reached destination! : 15/20 with a cumulative reward of 8.5
+Primary agent has reached destination! : 22/35 with a cumulative reward of 18.0
+Primary agent could not reach destination within deadline! Fail :3
+Primary agent has reached destination! : 32/35 with a cumulative reward of 3
+Primary agent has reached destination! : 11/30 with a cumulative reward of 28.0
+Primary agent could not reach destination within deadline! Fail :4
+Primary agent has reached destination! : 12/40 with a cumulative reward of 36.0
+Primary agent has reached destination! : 2/30 with a cumulative reward of 38.0
+Primary agent has reached destination! : 3/30 with a cumulative reward of 30.5
+Primary agent has reached destination! : 9/20 with a cumulative reward of 11.0
+Primary agent has reached destination! : 17/30 with a cumulative reward of 17.0
+Primary agent has reached destination! : 15/25 with a cumulative reward of 17.0
+Primary agent could not reach destination within deadline! Fail :5
+Primary agent has reached destination! : 31/35 with a cumulative reward of 1.0
+Primary agent has reached destination! : 20/25 with a cumulative reward of 7.5
+Primary agent could not reach destination within deadline! Fail :6
+Primary agent has reached destination! : 17/25 with a cumulative reward of 12.5
+Primary agent has reached destination! : 2/20 with a cumulative reward of 26.5
+Primary agent could not reach destination within deadline! Fail :7
+Primary agent has reached destination! : 6/20 with a cumulative reward of 21.0
+Primary agent has reached destination! : 13/20 with a cumulative reward of 12.5
+Primary agent has reached destination! : 12/35 with a cumulative reward of 39.0
+Primary agent could not reach destination within deadline! Fail :8
+Primary agent has reached destination! : 17/20 with a cumulative reward of 4.5
+Primary agent has reached destination! : 21/25 with a cumulative reward of 6.5
+Primary agent has reached destination! : 11/25 with a cumulative reward of 16.5
+Primary agent could not reach destination within deadline! Fail :9
+Primary agent has reached destination! : 6/25 with a cumulative reward of 27.0
+Primary agent has reached destination! : 11/25 with a cumulative reward of 25.0
+Primary agent has reached destination! : 39/50 with a cumulative reward of 17.0
+Primary agent has reached destination! : 21/30 with a cumulative reward of 14.5
+Primary agent has reached destination! : 15/20 with a cumulative reward of 8
+Primary agent has reached destination! : 26/35 with a cumulative reward of 11.5
+Primary agent could not reach destination within deadline! Fail :10
+Primary agent has reached destination! : 16/20 with a cumulative reward of 7
+Primary agent has reached destination! : 24/40 with a cumulative reward of 19.5
+Primary agent has reached destination! : 35/50 with a cumulative reward of 20
+Primary agent has reached destination! : 14/25 with a cumulative reward of 15
+Primary agent has reached destination! : 10/30 with a cumulative reward of 26.5
+Primary agent could not reach destination within deadline! Fail :11
+Primary agent has reached destination! : 3/30 with a cumulative reward of 30.0
+Primary agent has reached destination! : 29/45 with a cumulative reward of 22.5
+Primary agent has reached destination! : 18/35 with a cumulative reward of 19
+Primary agent has reached destination! : 20/25 with a cumulative reward of 7
+Primary agent has reached destination! : 10/25 with a cumulative reward of 15
+Primary agent has reached destination! : 19/35 with a cumulative reward of 18.5
+Primary agent has reached destination! : 11/20 with a cumulative reward of 12
+Primary agent has reached destination! : 5/20 with a cumulative reward of 18
+Primary agent has reached destination! : 4/20 with a cumulative reward of 17
+Primary agent has reached destination! : 22/55 with a cumulative reward of 38.5
+Primary agent has reached destination! : 29/45 with a cumulative reward of 20
+Primary agent has reached destination! : 13/25 with a cumulative reward of 16
+Primary agent has reached destination! : 25/45 with a cumulative reward of 28.5
+Primary agent has reached destination! : 29/50 with a cumulative reward of 31.0
+Primary agent has reached destination! : 41/45 with a cumulative reward of 6.5
+Primary agent has reached destination! : 47/60 with a cumulative reward of 14.5
+Primary agent has reached destination! : 14/25 with a cumulative reward of 15
+Primary agent has reached destination! : 11/20 with a cumulative reward of 14.5
+Primary agent has reached destination! : 17/35 with a cumulative reward of 24.5
+Primary agent has reached destination! : 22/40 with a cumulative reward of 26.0
+Primary agent has reached destination! : 26/35 with a cumulative reward of 15
+Primary agent has reached destination! : 13/25 with a cumulative reward of 14
+Primary agent has reached destination! : 1/45 with a cumulative reward of 60.5
+Primary agent has reached destination! : 13/25 with a cumulative reward of 21.0
+Primary agent has reached destination! : 14/25 with a cumulative reward of 25.0
+Primary agent has reached destination! : 7/40 with a cumulative reward of 49.5
+Primary agent has reached destination! : 1/20 with a cumulative reward of 26.5
+Primary agent has reached destination! : 18/25 with a cumulative reward of 11.5
+Primary agent has reached destination! : 14/30 with a cumulative reward of 26.5
+Primary agent has reached destination! : 16/30 with a cumulative reward of 26.5
+Primary agent has reached destination! : 29/50 with a cumulative reward of 22.5
+Primary agent has reached destination! : 27/50 with a cumulative reward of 33.0
+Primary agent has reached destination! : 14/30 with a cumulative reward of 26.5
+Primary agent has reached destination! : 13/30 with a cumulative reward of 26.5
+Primary agent has reached destination! : 13/25 with a cumulative reward of 18.0
+Primary agent has reached destination! : 18/25 with a cumulative reward of 7
+Primary agent has reached destination! : 11/25 with a cumulative reward of 19.5
+Primary agent has reached destination! : 39/45 with a cumulative reward of 10.5
+Primary agent has reached destination! : 34/45 with a cumulative reward of 13.5
+Primary agent has reached destination! : 17/20 with a cumulative reward of 6
+Primary agent has reached destination! : 11/30 with a cumulative reward of 25.0
+Primary agent has reached destination! : 11/30 with a cumulative reward of 29.0
+Primary agent has reached destination! : 1/30 with a cumulative reward of 39.0
+Primary agent has reached destination! : 13/20 with a cumulative reward of 11.0
+Primary agent has reached destination! : 9/30 with a cumulative reward of 28.0
+Primary agent has reached destination! : 8/20 with a cumulative reward of 14.5
+Primary agent has reached destination! : 10/35 with a cumulative reward of 38.5
+Primary agent has reached destination! : 20/35 with a cumulative reward of 26.0
+Primary agent has reached destination! : 30/40 with a cumulative reward of 12.5
+Primary agent has reached destination! : 1/30 with a cumulative reward of 42.5
+Primary agent has reached destination! : 6/20 with a cumulative reward of 21.0
